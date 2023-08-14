@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { View, Text, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -7,10 +8,14 @@ import { SubInfo, DollarPrice, PlantTitle } from "./SubInfo";
 
 const PlantCard = ({ data }) => {
   const navigation = useNavigation();
+    const [heartPressed, setHeartPressed] = useState(false);
+     const toggleHeart = () => {
+       setHeartPressed(!heartPressed);
+     };
   return (
     <View
       style={{
-        backgroundColor: COLORS.gray,
+        backgroundColor: COLORS.white,
         borderRadius: SIZES.font,
         marginBottom: SIZES.extraLarge,
         margin: SIZES.base,
@@ -28,8 +33,12 @@ const PlantCard = ({ data }) => {
             borderTopRightRadius: SIZES.font,
           }}
         />
-
-        <CircleButton imgUrl={assets.heart} right={10} top={10} />
+        <CircleButton
+          imgUrl={heartPressed ? assets.heart : assets.heart_filled}
+          handlePress={toggleHeart}
+          right={10}
+          top={10}
+        />
       </View>
 
       <SubInfo />
