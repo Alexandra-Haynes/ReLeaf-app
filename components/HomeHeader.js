@@ -21,16 +21,16 @@ const HomeHeader = ({ onSearch }) => {
           <Image
             source={assets.person01}
             resizeMode="contain"
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: 50, height: 50 }}
           />
           <Image
             source={assets.badge}
             resizeMode="contain"
             style={{
               position: "absolute",
-              width: 15,
-              height: 15,
-              bottom: 0,
+              width: 20,
+              height: 20,
+              bottom: -4,
               right: 0,
             }}
           />
@@ -56,7 +56,7 @@ const HomeHeader = ({ onSearch }) => {
             marginTop: SIZES.base / 2,
           }}
         >
-          Let's find a masterpiece
+          Let's expand the garden
         </Text>
       </View>
 
@@ -75,11 +75,11 @@ const HomeHeader = ({ onSearch }) => {
           <Image
             source={assets.search}
             resizeMode="contain"
-            style={{ width: 20, height: 20, marginRight: SIZES.base,  }}
+            style={{ width: 20, height: 20, marginRight: SIZES.base }}
           />
           <TextInput
             placeholder="Search plants"
-            style={{ flex: 1, }}
+            style={{ flex: 1 }}
             onChangeText={onSearch}
           ></TextInput>
         </View>
